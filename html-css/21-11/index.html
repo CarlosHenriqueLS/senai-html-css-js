@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./estilo/style.css">
+</head>
+<body>
+    <header>
+        <a href="#">Início</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#">Sobre Nós</a>
+        <a href="#formula">Compre Agora</a>
+
+        <img src="" alt="">
+    </header>
+
+    <div class="principal">
+        <div class="merchand">
+            <h1>Transforme cada batimento em um passo em direção à sua melhor versão com o SmartHealth Bracelet:</h1>
+            <p>Sua jornada para um estilo de vida mais ativo, conectado e saudável começa aqui</p>
+            <button class="custom-button" >
+                <a href="#formula">Compre Agora</a>
+            </button>
+        </div>
+
+        <img src="imagens/treino.png" alt="">
+    </div>
+
+    <section id="recursos">
+        <div>
+            <ion-icon name="time-outline"></ion-icon>
+            <h2>Monitoramento em Tempo Real</h2>
+            <p>Acompanhe seus batimentos cardíacos, níveis de oxigênio e qualidade do sono em tempo real, garantindo que você esteja sempre em sintonia com sua saúde.</p>
+        </div>
+
+        <div>
+            <ion-icon name="watch-outline"></ion-icon>
+            <h2>Design Moderno e Confortável</h2>
+            <p>Desenvolvido com estilo e conforto em mente, o SmartHealth Bracelet une um design moderno a materiais premium para garantir uma experiência de uso excepcional.</p>
+        </div>
+
+        <div>
+            <ion-icon name="notifications-outline"></ion-icon>
+            <h2>Notificações Inteligentes</h2>
+            <p>Fique conectado sem esforço. Receba alertas discretos para chamadas, mensagens e lembretes diretamente no seu pulso, mantendo você informado e no controle</p>
+        </div>
+    </section>
+
+    <section id="imagem">
+        <div class="img-text">
+            <h1>Conectividade Avançada</h1>
+            <p>Sincronize facilmente seus dados com o smartphone, obtendo insights detalhados sobre sua saúde e bem-estar através de um aplicativo intuitivo e eficiente.</p>
+        </div>
+
+        <img src="imagens/relogios.png" alt="">
+    </section>
+
+    <div id="atras">
+
+    </div>
+
+    <div class="formulario" id="formula">
+        <form action="#" method="post" onsubmit="return validarFormulario()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="pergunta">Seu Pedido:</label>
+            <textarea id="pergunta" name="pergunta" rows="4" required></textarea>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
