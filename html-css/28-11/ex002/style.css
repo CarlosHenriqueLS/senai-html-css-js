@@ -16,18 +16,30 @@ html {
     font-family: var(--fonte-principal);
 }
 
-.formulario {
+h1 {
+    margin: 15px;
+    border-bottom: 1px solid black;
+}
+
+body {
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    height: 80%;
+
+    background-color: rgb(243, 102, 102);
 }
 
 fieldset {
     margin: auto;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
 
     padding: 10px;
-    background-color: rgb(251, 243, 232);
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
 
     width: 80vw;
 }
@@ -38,23 +50,42 @@ input {
     border: 1px solid black;
 
     border-radius: 5px;
+    font-size: 1em;
 }
 
 input:focus {
-    border: 3px solid rgba(255, 0, 0, 0.726);
-    background-color: rgba(196, 220, 254, 0.288);
+    border: 3px solid rgba(255, 102, 102, 0.726);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.555);
+    background-color: rgb(240, 237, 233);
 }
 
 label {
     margin-left: 10px;
+
+    font-weight: 600;
+    color: black;
 }
 
 button {
     width: 100px;
+    height: 50px;
     padding: 10px;
     margin-left: 10px;
 
     font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 1em;
+
+    background-color: rgb(250, 138, 138);
+
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.618);
 }
 
 input:focus, select:focus, textarea:focus, button:focus {
