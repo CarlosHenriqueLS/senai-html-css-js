@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 600px;
+    padding: 20px;
+}
+
+input {
+    margin: 15px;
+    height: 25px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 30px;
+}
+
+button {
+    padding:10px;
+    margin-top: 30px;
+
+
+    border-radius: 50px;
+    border: 1.5px solid black;
+    cursor: pointer;
+}
+
+fieldset {
+    width: 500px;
+    border-radius: 15px;
+    background-color: rgb(222, 222, 222);
+
+    text-align: left;
+}
+
+legend {
+    margin: auto;
+
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    text-align: center;
+}

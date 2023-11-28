@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de RegEx</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.mask-numeros').mask('9999999999');
+            $('.mask-cpf').mask('999.999.999-99');
+            $('.mask-real').maskMoney({showSymbol:true,symbol: 'R$ ', decimal: ' , ' , thousands: ' . ', allowZero:true});
+            $('.mask-cep').mask('99999-999');
+            $('mask.telefone').mask('(00) 0000-0000');
+        });
+    </script>
+</head>
+<body>
+    <h1>Aplicação de validação utilizando RegEx, JQUERY e JSON</h1>
+
+    <div class="formulario">
+        <form action="" name="form" id="form" onsubmit="return validar_tudo();">
+            <fieldset>
+                <legend>Cadastro</legend>
+                <label for="texto">Somente caracteres alfabéticos:</label>
+                <input type="text" name="texto" id="texto" required autocomplete="off"  minlength="10" maxlength="20">
+                <br>
+                <label for="numero">Somente caracteres numéricos: </label>
+                <input type="text" name="numero" id="numero" autocomplete="off" class="mask-numeros" placeholder="10 caracteres" required>
+                <br>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" autocomplete="off" class="mask-cpf" placeholder="xxx.xxx.xxx-xx" required>
+                <br>
+                <label for="imov">Valor Imóvel: </label>
+                <input type="text" name="imov" id="imov" autocomplete="off" class="mask-real" style="text-align: right;" placeholder="xx.xxx,xx" required>
+                <br>
+
+                <label for="cep">CEP: </label>
+                <input type="text" name="cep" id="cep" autocomplete="off" class="mask-cep" placeholder="xxxxx-xxx" required>
+            </fieldset>
+            <button type="submit">Confirmar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+Regex (Regular Expressions) é uma função da Ciência da Computação que é usada pra você buscar, validar e/ou alterar qualquer padrão de string em qualquer texto.
+
+em JavaScript, expressões regulares também são objetos. Elas podem ser utilizadas com os métodos exec e test do objeto RegExp, e com os métodos match, replace, search, e split do objeto String
+
+Buscas:
+Você consegue encontrar determinados padrões dentro de qualquer sequência de caracteres, por exemplo a busca por e-mails dentro de um texto.
+
+Validações:
+Você pode fazer a validação dos mais variados padrões, como telefone, e-mail e senha.
+
+Substituições:
+Pode substituir, qualquer trecho palavra ou letra dentro de um texto.
+
+
+Exemplo:
+
+Buscar todas as letras “E” do texto.
+
+Vamos montar uma expressão regular para isso, toda expressão regular começa com “/” e termina com “/ ” então vamos fazer isso…
+
+O que estiver entre essas duas barras vai determinar o que queremos encontrar, como nossa missão é achar as letras “E” dentro do texto vamos por um “E” dentro de nossa expressão.
+
+Utilizei o método String.prototype.match() que recebe uma expressão regular e retorna tudo que corresponde ao que foi determinado na expressão, no nosso caso queremos as letras “E”, vamos ver o resultado…
+
+Ué, veio um array com um único “E”, uma chave valor com o índice desse caractere, outra chamada input mostrando o texto de busca e uma groups com o valor indefinido… Nós estávamos esperando um array de letras e e não foi isso que acontece e o motivo foi a falta de flags…
+
+Flags:
+Podemos entender flags como “comandos extras” para nossa expressão regular, abaixo segue as flags e para o que cada uma serve:
+
+g : Com essa flag a expressão retorna todas as correspondências não se limitando a primeira que achar;
+
+i : Aplicando essa flag você está dizendo para expressão pode ignorar maiúsculas e minúsculas;
+
+m : Com essa flag a expressão trata caracteres de inicio e fim (^ $) delimitando a cada nova linha e não o texto por completo;
+
+Essas são algumas flags, existem outras e isso também varia de linguagem para linguagem.
+Agora vamos ver como fica nossa busca com a utilização das flags.
+
+A flag é aplicada após o fechamento da expressão, no nosso caso colocamos a flag “g” para varrer todo o texto e não se limitar ao primeiro resultado e a flag “i” que serve para não haver a diferenciação entre caracteres minúsculos e maiúsculos. Então o resultado da nossa busca agora é…
+
+Olha só temos um array de letras “E” agora, mas está correto? Temos todos os nossos caracteres “E” aqui? Vamos conferir.
+
+Nosso retorno teve um total de 8 letras “E” mas no texto existem 10 letras “E”. Neste momento podemos perceber um padrão, só não nos retornaram as letras com acento.
+
+Para resolver isso vamos falar de um ingrediente muito importante da nossa receita.
+
+Caracteres:
+Temos dois tipos de caracteres no regex:
+
+Caracteres Simples: São os caracteres padrões como A, b, C, 1, 3, ., o próprio “E” que utilizamos na nossa expressão é um caractere simples, resumindo é a escrita literal, quero buscar, validar ou substituir uma letra, número ou qualquer outra coisa “chumbada” utilizo de caracteres simples, exemplos:
+
+Roberto, 123, abc123, A, a, 2, é, ã, …
+
+Beleza, então precisamos adicionar o “É” a nossa expressão, para que retorne todos as letras “E” como queremos, vamos acrescentar isso na nossa expressão…
+
+/eé/gi
+
+Agora vamos testar e ver o resultado…
+
+const texto = 'Roverto tem dois telefones, um deles é (51) 98992-1111 e o outro é 88443-2122.'
+
+console.log(texto.match(/eé/gi))
+
+Rodamos o código e o resultado que temos é:
+
+null
+
+Null? Mas por que? A resposta é simples, estamos procurando por um padrão “eé” e em nenhum momento isso acontece em nosso texto, o que queremos na verdade é letras “E” ou letras “É”, e como fazemos isso?
+
+Com meta caracteres…
+
+Meta caracteres: São caracteres que executam alguma função dentro de uma expressão regular, eles não tem seu valor literal como caracteres simples, mas aplicam algum tipo de efeito na expressão, agora vamos utilizar um meta carácter na nossa expressão e ver o seu efeito, estou falando do…
+
+| (pipe): Esse meta carácter representa o OU, quando colocado em uma expressão entre alguns caracteres ele indica que você quer o que esta a esquerda dele OU o que está a direita.
+
+/e|é/gi
+
+testando
+
+const texto = 'Roverto tem dois telefones, um deles é (51) 98992-1111 e o outro é 88443-2122.'
+
+console.log(texto.match(/e|é/gi))
+
+resultado:
+
+'e', 'e', 'e', 'e', 
+'e', 'e', 'e', 'e', 
+'e', 'e', 
+
+
+
+
+
+Carlos Henrique 22/11
+
+Bibliografia: 
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_expressions
+
+https://medium.com/cwi-software/e-o-regex-como-vai-657f94388dc
