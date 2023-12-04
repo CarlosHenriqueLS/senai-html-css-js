@@ -1,0 +1,62 @@
+HTML :
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <button id="chec">Checar</button>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
+
+
+CSS:
+
+body {
+  background-color: antiquewhite;
+  padding: 0 24px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+
+  border-radius: 10px;
+  border: 1px solid black;
+
+  font-size: 1.1em;
+  transition: 0.5s;
+}
+
+button:hover {
+  transform: scale(1.2);
+  box-shadow: 2px 2px 2px black;
+
+
+  border-radius: 0;
+}
+
+
+JavaScript:
+
+var checar = document.getElementById('chec')
+
+checar.onclick = function() {
+  var escolha = confirm('OK ou você quer cancelar?')
+  if (escolha ==true) {
+    alert('Escolheu OK')
+  } else {
+    alert('Escolheu cancelar')
+  }
+}
